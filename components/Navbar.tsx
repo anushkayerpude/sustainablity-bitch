@@ -41,15 +41,15 @@ export default function Navbar({
           
           {/* Logo & Platform Name */}
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-lg bg-fuchsia-600 flex items-center justify-center shadow-lg shadow-fuchsia-600/30">
+            <div className="w-9 h-9 rounded-lg bg-[#8b5a68] flex items-center justify-center shadow-lg shadow-[#8b5a68]/30">
               <Terminal className="w-5 h-5 text-white stroke-[2.5]" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
                 <span className="font-black text-lg tracking-tight text-white">
-                  Lab<span className="text-fuchsia-500">Sync</span>
+                  Lab<span className="text-[#9d6878]">Sync</span>
                 </span>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider bg-fuchsia-950 text-fuchsia-300 border border-fuchsia-800 px-1.5 py-0.5 rounded">
+                <span className="text-[10px] font-extrabold uppercase tracking-wider bg-[#1a0d12] text-[#d4b8be] border border-[#3d1f28] px-1.5 py-0.5 rounded">
                   Digital Lab
                 </span>
               </div>
@@ -65,14 +65,14 @@ export default function Navbar({
               onClick={() => setActiveTab('practicals')}
               className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'practicals'
-                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-600/30'
+                  ? 'bg-[#8b5a68] text-white shadow-md shadow-[#8b5a68]/30'
                   : 'text-zinc-300 hover:text-white hover:bg-zinc-900'
               }`}
             >
               <Layers className="w-4 h-4" />
               <span>Practicals</span>
               {hasActiveLiveSession && (
-                <span className="w-2 h-2 rounded-full bg-fuchsia-300 animate-ping ml-1" />
+                <span className="w-2 h-2 rounded-full bg-[#d4b8be] animate-ping ml-1" />
               )}
             </button>
 
@@ -80,7 +80,7 @@ export default function Navbar({
               onClick={() => setActiveTab('assignments')}
               className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'assignments'
-                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-600/30'
+                  ? 'bg-[#8b5a68] text-white shadow-md shadow-[#8b5a68]/30'
                   : 'text-zinc-300 hover:text-white hover:bg-zinc-900'
               }`}
             >
@@ -92,7 +92,7 @@ export default function Navbar({
               onClick={() => setActiveTab('journal')}
               className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                 activeTab === 'journal'
-                  ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-600/30'
+                  ? 'bg-[#8b5a68] text-white shadow-md shadow-[#8b5a68]/30'
                   : 'text-zinc-300 hover:text-white hover:bg-zinc-900'
               }`}
             >
@@ -105,11 +105,11 @@ export default function Navbar({
                 onClick={() => setActiveTab('teacher_cockpit')}
                 className={`flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all ${
                   activeTab === 'teacher_cockpit'
-                    ? 'bg-fuchsia-600 text-white shadow-md shadow-fuchsia-600/30 ring-2 ring-fuchsia-400'
-                    : 'text-fuchsia-400 hover:text-white hover:bg-zinc-900'
+                    ? 'bg-[#8b5a68] text-white shadow-md shadow-[#8b5a68]/30 ring-2 ring-[#c9a0aa]'
+                    : 'text-[#c9a0aa] hover:text-white hover:bg-zinc-900'
                 }`}
               >
-                <Radio className="w-4 h-4 animate-pulse text-fuchsia-400" />
+                <Radio className="w-4 h-4 animate-pulse text-[#c9a0aa]" />
                 <span>Teacher Radar</span>
               </button>
             )}
@@ -120,7 +120,7 @@ export default function Navbar({
             
             {/* Sustainability Badge */}
             <div className="hidden lg:flex items-center space-x-1.5 bg-zinc-900 border border-zinc-800 px-2.5 py-1 rounded-lg text-xs text-zinc-300">
-              <Leaf className="w-3.5 h-3.5 text-fuchsia-400" />
+              <Leaf className="w-3.5 h-3.5 text-[#c9a0aa]" />
               <span>{pagesSavedCount} Pages Saved</span>
             </div>
 
@@ -128,13 +128,13 @@ export default function Navbar({
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex items-center space-x-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-fuchsia-500/50 px-3 py-1.5 rounded-xl transition-all"
+                className="flex items-center space-x-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-[#9d6878]/50 px-3 py-1.5 rounded-xl transition-all"
               >
                 <span className="text-sm">{currentUser?.avatar || '👤'}</span>
                 <div className="text-left hidden sm:block">
                   <div className="text-xs font-bold text-white flex items-center space-x-1.5">
                     <span>{currentUser?.name || 'User'}</span>
-                    <span className="text-[10px] px-1.5 py-0.2 rounded font-mono font-bold bg-fuchsia-950 text-fuchsia-400 border border-fuchsia-800">
+                    <span className="text-[10px] px-1.5 py-0.2 rounded font-mono font-bold bg-[#1a0d12] text-[#c9a0aa] border border-[#3d1f28]">
                       {currentUser?.personal_id}
                     </span>
                   </div>
@@ -162,7 +162,7 @@ export default function Navbar({
                         onClick={() => onSwitchUser(u.id)}
                         className={`w-full text-left px-2.5 py-2 rounded-lg flex items-center justify-between text-xs transition-colors ${
                           currentUser?.id === u.id
-                            ? 'bg-fuchsia-600 text-white font-bold'
+                            ? 'bg-[#8b5a68] text-white font-bold'
                             : 'text-zinc-300 hover:bg-zinc-900'
                         }`}
                       >
@@ -174,7 +174,7 @@ export default function Navbar({
                           </div>
                         </div>
                         <span className={`text-[10px] px-1.5 py-0.5 rounded uppercase font-bold ${
-                          u.role === 'teacher' ? 'bg-zinc-800 text-fuchsia-300' : 'bg-zinc-800 text-zinc-300'
+                          u.role === 'teacher' ? 'bg-zinc-800 text-[#d4b8be]' : 'bg-zinc-800 text-zinc-300'
                         }`}>
                           {u.role}
                         </span>

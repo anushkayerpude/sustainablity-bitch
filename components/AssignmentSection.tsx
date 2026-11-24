@@ -148,7 +148,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
       {/* Header */}
       <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <div className="flex items-center space-x-2 text-fuchsia-400 text-xs font-bold uppercase tracking-wider mb-1">
+          <div className="flex items-center space-x-2 text-[#c9a0aa] text-xs font-bold uppercase tracking-wider mb-1">
             <BookOpen className="w-4 h-4" />
             <span>Assignments & Homework</span>
           </div>
@@ -156,7 +156,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             Engineering Coursework
           </h2>
           <p className="text-xs text-zinc-400 mt-1 max-w-lg">
-            Solve problems, submit theory or code, and get graded online under Student ID: <span className="text-fuchsia-400 font-mono font-bold">{currentUser.personal_id}</span>.
+            Solve problems, submit theory or code, and get graded online under Student ID: <span className="text-[#c9a0aa] font-mono font-bold">{currentUser.personal_id}</span>.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
           </div>
           <div className="bg-black border border-zinc-800 p-3 rounded-xl text-center min-w-[75px]">
             <div className="text-[10px] text-zinc-400 uppercase font-bold">Graded</div>
-            <div className="text-xl font-black text-fuchsia-400 mt-0.5">{gradedCount}</div>
+            <div className="text-xl font-black text-[#c9a0aa] mt-0.5">{gradedCount}</div>
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             onClick={() => setFilter('all')}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               filter === 'all'
-                ? 'bg-fuchsia-600 text-white shadow-md'
+                ? 'bg-[#8b5a68] text-white shadow-md'
                 : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
             }`}
           >
@@ -194,7 +194,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             onClick={() => setFilter('pending')}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               filter === 'pending'
-                ? 'bg-fuchsia-600 text-white shadow-md'
+                ? 'bg-[#8b5a68] text-white shadow-md'
                 : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
             }`}
           >
@@ -204,7 +204,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             onClick={() => setFilter('submitted')}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               filter === 'submitted'
-                ? 'bg-fuchsia-600 text-white shadow-md'
+                ? 'bg-[#8b5a68] text-white shadow-md'
                 : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
             }`}
           >
@@ -214,7 +214,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             onClick={() => setFilter('graded')}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               filter === 'graded'
-                ? 'bg-fuchsia-600 text-white shadow-md'
+                ? 'bg-[#8b5a68] text-white shadow-md'
                 : 'bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800'
             }`}
           >
@@ -229,7 +229,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             placeholder="Search assignments..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="bg-zinc-900 border border-zinc-800 text-xs text-white pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:border-fuchsia-500 w-full sm:w-60"
+            className="bg-zinc-900 border border-zinc-800 text-xs text-white pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:border-[#9d6878] w-full sm:w-60"
           />
         </div>
       </div>
@@ -248,19 +248,19 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
             return (
               <div
                 key={assign.id}
-                className={`bg-zinc-950 border rounded-2xl p-5 flex flex-col justify-between transition-all hover:border-fuchsia-500/70 ${
+                className={`bg-zinc-950 border rounded-2xl p-5 flex flex-col justify-between transition-all hover:border-[#9d6878]/70 ${
                   isGraded ? 'border-zinc-800' : isSub ? 'border-zinc-800' : 'border-zinc-800'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[10px] font-bold text-fuchsia-400 uppercase">
+                    <span className="text-[10px] font-bold text-[#c9a0aa] uppercase">
                       {assign.subject_code} • {assign.category}
                     </span>
 
                     {isGraded ? (
-                      <span className="bg-zinc-900 border border-fuchsia-700 text-fuchsia-300 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center space-x-1">
-                        <Award className="w-3 h-3 text-fuchsia-400" />
+                      <span className="bg-zinc-900 border border-[#4a2f38] text-[#d4b8be] text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center space-x-1">
+                        <Award className="w-3 h-3 text-[#c9a0aa]" />
                         <span>Graded: {(assign as any).marks_obtained}/{assign.max_marks}</span>
                       </span>
                     ) : isSub ? (
@@ -285,7 +285,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
                   {/* Feedback if graded */}
                   {isGraded && (assign as any).teacher_feedback && (
                     <div className="mt-3 bg-black border border-zinc-800 rounded-xl p-2.5 text-xs">
-                      <span className="text-[10px] uppercase font-bold text-fuchsia-400 block">Teacher Feedback:</span>
+                      <span className="text-[10px] uppercase font-bold text-[#c9a0aa] block">Teacher Feedback:</span>
                       <p className="text-[11px] text-zinc-300 italic mt-0.5">
                         "{(assign as any).teacher_feedback}"
                       </p>
@@ -301,7 +301,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
 
                   <button
                     onClick={() => openSolver(assign)}
-                    className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-fuchsia-600 hover:bg-fuchsia-500 text-white transition-all shadow-md"
+                    className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#8b5a68] hover:bg-[#9d6878] text-white transition-all shadow-md"
                   >
                     <span>{isGraded ? 'View Submission' : isSub ? 'Edit Solution' : 'Solve & Submit'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -319,7 +319,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
           <div className="bg-zinc-950 border border-zinc-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
             <div className="px-5 py-3 border-b border-zinc-800 flex items-center justify-between bg-black">
               <div>
-                <span className="text-[10px] font-bold uppercase text-fuchsia-400">
+                <span className="text-[10px] font-bold uppercase text-[#c9a0aa]">
                   {activeAssignment.subject_code}
                 </span>
                 <h3 className="text-sm font-bold text-white">
@@ -345,7 +345,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
                     <label className="font-bold text-white flex items-center space-x-1">
-                      <Code2 className="w-3.5 h-3.5 text-fuchsia-400" />
+                      <Code2 className="w-3.5 h-3.5 text-[#c9a0aa]" />
                       <span>Code Solution:</span>
                     </label>
                     <select
@@ -363,14 +363,14 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
                     value={submissionCode}
                     onChange={(e) => setSubmissionCode(e.target.value)}
                     placeholder="// Write solution here..."
-                    className="w-full bg-black border border-zinc-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-fuchsia-500"
+                    className="w-full bg-black border border-zinc-800 rounded-xl p-3 font-mono text-xs text-white focus:outline-none focus:border-[#9d6878]"
                   />
                   <button
                     type="button"
                     onClick={handleTestRun}
-                    className="text-xs font-bold text-fuchsia-400 bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800 flex items-center space-x-1"
+                    className="text-xs font-bold text-[#c9a0aa] bg-zinc-900 px-3 py-1.5 rounded-lg border border-zinc-800 flex items-center space-x-1"
                   >
-                    <Play className="w-3 h-3 fill-fuchsia-400" />
+                    <Play className="w-3 h-3 fill-[#c9a0aa]" />
                     <span>Test Run Code</span>
                   </button>
 
@@ -385,7 +385,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
               {/* Notes */}
               <div className="space-y-1">
                 <label className="font-bold text-white flex items-center space-x-1">
-                  <FileText className="w-3.5 h-3.5 text-fuchsia-400" />
+                  <FileText className="w-3.5 h-3.5 text-[#c9a0aa]" />
                   <span>Notes / Explanations:</span>
                 </label>
                 <textarea
@@ -393,7 +393,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
                   value={submissionNotes}
                   onChange={(e) => setSubmissionNotes(e.target.value)}
                   placeholder="Explain your approach..."
-                  className="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-fuchsia-500"
+                  className="w-full bg-black border border-zinc-800 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-[#9d6878]"
                 />
               </div>
             </div>
@@ -412,7 +412,7 @@ export default function AssignmentSection({ currentUser }: AssignmentSectionProp
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="flex items-center space-x-1 px-4 py-1.5 text-xs font-bold text-white bg-fuchsia-600 hover:bg-fuchsia-500 rounded-xl shadow-md disabled:opacity-50"
+                  className="flex items-center space-x-1 px-4 py-1.5 text-xs font-bold text-white bg-[#8b5a68] hover:bg-[#9d6878] rounded-xl shadow-md disabled:opacity-50"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>{isSubmitting ? 'Submitting...' : 'Submit'}</span>

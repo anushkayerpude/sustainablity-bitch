@@ -169,8 +169,8 @@ export default function TeacherDashboard({
       {/* Header */}
       <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <div className="flex items-center space-x-2 text-fuchsia-400 text-xs font-bold uppercase tracking-wider mb-1">
-            <Radio className="w-4 h-4 text-fuchsia-400 animate-pulse" />
+          <div className="flex items-center space-x-2 text-[#c9a0aa] text-xs font-bold uppercase tracking-wider mb-1">
+            <Radio className="w-4 h-4 text-[#c9a0aa] animate-pulse" />
             <span>Faculty Lab Monitor</span>
           </div>
           <h2 className="text-2xl font-black text-white">
@@ -183,7 +183,7 @@ export default function TeacherDashboard({
 
         <button
           onClick={() => setIsCreateOpen(true)}
-          className="flex items-center space-x-2 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all shadow-md shadow-fuchsia-600/30"
+          className="flex items-center space-x-2 bg-[#8b5a68] hover:bg-[#9d6878] text-white font-bold px-4 py-2 rounded-xl text-xs transition-all shadow-md shadow-[#8b5a68]/30"
         >
           <Plus className="w-4 h-4" />
           <span>Start Lab Lecture</span>
@@ -192,11 +192,11 @@ export default function TeacherDashboard({
 
       {/* Active Session Card */}
       {activeSession ? (
-        <div className="bg-zinc-950 border border-fuchsia-600 rounded-2xl p-5 shadow-xl">
+        <div className="bg-zinc-950 border border-[#8b5a68] rounded-2xl p-5 shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center space-x-2 text-xs font-bold text-fuchsia-400">
-                <span className="w-2 h-2 rounded-full bg-fuchsia-400 animate-ping" />
+              <div className="flex items-center space-x-2 text-xs font-bold text-[#c9a0aa]">
+                <span className="w-2 h-2 rounded-full bg-[#c9a0aa] animate-ping" />
                 <span>LAB LECTURE IN SESSION</span>
                 <span>•</span>
                 <span className="text-white">{activeSession.subject_title}</span>
@@ -207,9 +207,9 @@ export default function TeacherDashboard({
             </div>
 
             <div className="flex items-center space-x-3">
-              <div className="bg-black border border-fuchsia-700/80 px-3.5 py-1.5 rounded-xl text-center">
+              <div className="bg-black border border-[#4a2f38]/80 px-3.5 py-1.5 rounded-xl text-center">
                 <span className="text-[10px] text-zinc-400 block uppercase font-bold">Room Passcode</span>
-                <span className="text-base font-mono font-black text-fuchsia-400">
+                <span className="text-base font-mono font-black text-[#c9a0aa]">
                   {activeSession.session_code}
                 </span>
               </div>
@@ -228,10 +228,10 @@ export default function TeacherDashboard({
           <div className="mt-4 pt-3 border-t border-zinc-800">
             <div className="flex items-center justify-between mb-2 text-xs text-zinc-300 font-bold">
               <span className="flex items-center space-x-1.5">
-                <Users className="w-4 h-4 text-fuchsia-400" />
+                <Users className="w-4 h-4 text-[#c9a0aa]" />
                 <span>Students Active in Lab ({telemetry.length})</span>
               </span>
-              <button onClick={fetchData} className="text-fuchsia-400 hover:underline flex items-center space-x-1 text-[11px]">
+              <button onClick={fetchData} className="text-[#c9a0aa] hover:underline flex items-center space-x-1 text-[11px]">
                 <RotateCw className="w-3 h-3" />
                 <span>Refresh</span>
               </button>
@@ -245,7 +245,7 @@ export default function TeacherDashboard({
                   <div key={t.student_id} className="bg-black border border-zinc-800 p-2.5 rounded-xl text-xs space-y-1">
                     <div className="flex justify-between items-center font-bold">
                       <span className="text-white">{t.student_name}</span>
-                      <span className="font-mono text-[10px] text-fuchsia-400">{t.student_personal_id}</span>
+                      <span className="font-mono text-[10px] text-[#c9a0aa]">{t.student_personal_id}</span>
                     </div>
                     <div className="text-[11px] text-zinc-400">
                       Status: <span className="text-zinc-200">{t.status_label || 'Active'}</span>
@@ -253,7 +253,7 @@ export default function TeacherDashboard({
                     <div className="text-[10px] text-zinc-500 flex justify-between pt-1 border-t border-zinc-900">
                       <span>{t.keystrokes_count} keys</span>
                       <span>{t.run_count} runs</span>
-                      <span className="text-fuchsia-400 font-bold">{t.tests_passed}/{t.tests_total} tests</span>
+                      <span className="text-[#c9a0aa] font-bold">{t.tests_passed}/{t.tests_total} tests</span>
                     </div>
                   </div>
                 ))}
@@ -267,7 +267,7 @@ export default function TeacherDashboard({
       <div className="space-y-3">
         <div className="flex items-center justify-between text-xs font-bold text-white uppercase tracking-wider">
           <span className="flex items-center space-x-1.5">
-            <ShieldCheck className="w-4 h-4 text-fuchsia-400" />
+            <ShieldCheck className="w-4 h-4 text-[#c9a0aa]" />
             <span>Submissions Awaiting Verification ({pending.length})</span>
           </span>
           <span className="text-zinc-500">{verified.length} Already Verified</span>
@@ -287,13 +287,13 @@ export default function TeacherDashboard({
                 <div>
                   <div className="flex items-center space-x-2">
                     <span className="font-bold text-white text-sm">{sub.student_name}</span>
-                    <span className="font-mono text-xs text-fuchsia-400 bg-black px-1.5 py-0.5 rounded border border-zinc-800">
+                    <span className="font-mono text-xs text-[#c9a0aa] bg-black px-1.5 py-0.5 rounded border border-zinc-800">
                       {sub.student_personal_id}
                     </span>
                     <span className="text-xs text-zinc-500">• {sub.student_batch}</span>
                   </div>
                   <div className="text-xs text-zinc-300 mt-0.5">
-                    <strong className="text-fuchsia-400">Exp {sub.exp_number}:</strong> {sub.practical_title} ({sub.subject_code})
+                    <strong className="text-[#c9a0aa]">Exp {sub.exp_number}:</strong> {sub.practical_title} ({sub.subject_code})
                   </div>
                   <div className="text-[11px] text-zinc-500 mt-1">
                     Language: <strong className="text-zinc-200 uppercase">{sub.language}</strong> • Submitted: {new Date(sub.updated_at).toLocaleTimeString()}
@@ -302,7 +302,7 @@ export default function TeacherDashboard({
 
                 <button
                   onClick={() => handleOpenReview(sub)}
-                  className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-all shadow-md flex items-center space-x-1"
+                  className="bg-[#8b5a68] hover:bg-[#9d6878] text-white font-bold px-3.5 py-1.5 rounded-lg text-xs transition-all shadow-md flex items-center space-x-1"
                 >
                   <span>Review & Sign</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -319,7 +319,7 @@ export default function TeacherDashboard({
           <div className="bg-zinc-950 border border-zinc-800 rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
             <div className="px-5 py-3 border-b border-zinc-800 flex items-center justify-between bg-black">
               <div>
-                <span className="text-[10px] font-bold uppercase text-fuchsia-400">
+                <span className="text-[10px] font-bold uppercase text-[#c9a0aa]">
                   Faculty Verification
                 </span>
                 <h3 className="text-sm font-bold text-white">
@@ -334,7 +334,7 @@ export default function TeacherDashboard({
             <div className="flex-1 overflow-y-auto p-5 space-y-4 text-xs">
               {/* Proof */}
               <div className="bg-black border border-zinc-800 p-3 rounded-xl space-y-1 text-zinc-300">
-                <span className="text-[10px] font-bold text-fuchsia-400 uppercase block">Simultaneous Lab Proof:</span>
+                <span className="text-[10px] font-bold text-[#c9a0aa] uppercase block">Simultaneous Lab Proof:</span>
                 <div className="grid grid-cols-3 gap-2 text-[11px] pt-1">
                   <div>Room: <strong className="text-white">{reviewSub.simultaneous_proof?.lab_room || 'Lab 304'}</strong></div>
                   <div>Keystrokes: <strong className="text-white">{reviewSub.simultaneous_proof?.keystrokes || 600}</strong></div>
@@ -354,7 +354,7 @@ export default function TeacherDashboard({
               {reviewSub.last_output && (
                 <div>
                   <label className="font-bold text-white block mb-1">Terminal Output:</label>
-                  <pre className="bg-black border border-zinc-800 rounded-xl p-2.5 font-mono text-[11px] text-fuchsia-300 whitespace-pre-wrap">
+                  <pre className="bg-black border border-zinc-800 rounded-xl p-2.5 font-mono text-[11px] text-[#d4b8be] whitespace-pre-wrap">
                     {reviewSub.last_output}
                   </pre>
                 </div>
@@ -371,7 +371,7 @@ export default function TeacherDashboard({
                     step="0.5"
                     value={marks}
                     onChange={(e) => setMarks(Number(e.target.value))}
-                    className="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 font-mono text-sm font-bold text-fuchsia-400 focus:outline-none"
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-2 font-mono text-sm font-bold text-[#c9a0aa] focus:outline-none"
                   />
                 </div>
                 <div className="col-span-2">
@@ -397,7 +397,7 @@ export default function TeacherDashboard({
               <button
                 onClick={() => handleVerify('approve')}
                 disabled={isVerifying}
-                className="flex items-center space-x-1.5 px-4 py-1.5 text-xs font-bold text-white bg-fuchsia-600 hover:bg-fuchsia-500 rounded-xl shadow-md disabled:opacity-50"
+                className="flex items-center space-x-1.5 px-4 py-1.5 text-xs font-bold text-white bg-[#8b5a68] hover:bg-[#9d6878] rounded-xl shadow-md disabled:opacity-50"
               >
                 <ShieldCheck className="w-4 h-4" />
                 <span>Approve & Sign Digitally</span>
@@ -462,7 +462,7 @@ export default function TeacherDashboard({
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold rounded-lg shadow-md"
+                  className="px-4 py-1.5 bg-[#8b5a68] hover:bg-[#9d6878] text-white font-bold rounded-lg shadow-md"
                 >
                   Broadcast & Start Lab
                 </button>

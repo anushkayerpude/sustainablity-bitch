@@ -288,7 +288,7 @@ export default function PracticalIDE({
   if (loading) {
     return (
       <div className="h-[75vh] flex flex-col items-center justify-center text-zinc-400 space-y-3">
-        <Cpu className="w-8 h-8 animate-spin text-fuchsia-500" />
+        <Cpu className="w-8 h-8 animate-spin text-[#9d6878]" />
         <p className="text-xs font-bold uppercase tracking-wider">Loading Code Environment...</p>
       </div>
     );
@@ -298,7 +298,7 @@ export default function PracticalIDE({
     return (
       <div className="p-8 text-center text-zinc-300">
         <p>Practical not found.</p>
-        <button onClick={onBack} className="mt-2 text-fuchsia-400 underline">Back</button>
+        <button onClick={onBack} className="mt-2 text-[#c9a0aa] underline">Back</button>
       </div>
     );
   }
@@ -323,7 +323,7 @@ export default function PracticalIDE({
 
           <div>
             <div className="flex items-center space-x-2">
-              <span className="text-[10px] font-black uppercase text-fuchsia-400">
+              <span className="text-[10px] font-black uppercase text-[#c9a0aa]">
                 EXP {practical.exp_number}
               </span>
               <span className="text-xs font-bold text-white truncate max-w-xs sm:max-w-md">
@@ -339,7 +339,7 @@ export default function PracticalIDE({
         {/* Center: Language Switcher */}
         <div className="flex items-center space-x-2">
           <div className="flex items-center space-x-1.5 bg-zinc-900 border border-zinc-800 px-2.5 py-1 rounded-lg">
-            <Code2 className="w-3.5 h-3.5 text-fuchsia-400" />
+            <Code2 className="w-3.5 h-3.5 text-[#c9a0aa]" />
             <select
               value={language}
               onChange={(e) => handleLanguageChange(e.target.value)}
@@ -369,7 +369,7 @@ export default function PracticalIDE({
             disabled={isRunning}
             className="flex items-center space-x-1.5 bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all disabled:opacity-50"
           >
-            <Play className={`w-3.5 h-3.5 text-fuchsia-400 fill-fuchsia-400 ${isRunning ? 'animate-spin' : ''}`} />
+            <Play className={`w-3.5 h-3.5 text-[#c9a0aa] fill-[#c9a0aa] ${isRunning ? 'animate-spin' : ''}`} />
             <span>Run Code</span>
           </button>
 
@@ -385,15 +385,15 @@ export default function PracticalIDE({
           ) : null}
 
           {isVerified ? (
-            <div className="flex items-center space-x-1 bg-zinc-900 border border-fuchsia-600 text-fuchsia-400 px-3 py-1.5 rounded-lg text-xs font-bold">
-              <ShieldCheck className="w-4 h-4 text-fuchsia-400" />
+            <div className="flex items-center space-x-1 bg-zinc-900 border border-[#8b5a68] text-[#c9a0aa] px-3 py-1.5 rounded-lg text-xs font-bold">
+              <ShieldCheck className="w-4 h-4 text-[#c9a0aa]" />
               <span>Checked ({submission.marks_obtained}/{practical.max_marks})</span>
             </div>
           ) : (
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="flex items-center space-x-1.5 bg-fuchsia-600 hover:bg-fuchsia-500 text-white px-4 py-1.5 rounded-lg text-xs font-extrabold transition-all shadow-lg shadow-fuchsia-600/30 disabled:opacity-50"
+              className="flex items-center space-x-1.5 bg-[#8b5a68] hover:bg-[#9d6878] text-white px-4 py-1.5 rounded-lg text-xs font-extrabold transition-all shadow-lg shadow-[#8b5a68]/30 disabled:opacity-50"
             >
               <Send className="w-3.5 h-3.5" />
               <span>Submit to Teacher</span>
@@ -411,9 +411,9 @@ export default function PracticalIDE({
           
           {/* Live Lab Presence Badge */}
           <div className="bg-black border border-zinc-800 rounded-xl p-3 text-xs space-y-1">
-            <div className="flex items-center justify-between text-fuchsia-400 font-bold text-[10px] uppercase">
+            <div className="flex items-center justify-between text-[#c9a0aa] font-bold text-[10px] uppercase">
               <span className="flex items-center space-x-1">
-                <Radio className="w-3 h-3 text-fuchsia-400 animate-pulse" />
+                <Radio className="w-3 h-3 text-[#c9a0aa] animate-pulse" />
                 <span>Live Lab Presence</span>
               </span>
               <span>{activeSession ? activeSession.session_code : 'LOCAL LAB'}</span>
@@ -429,7 +429,7 @@ export default function PracticalIDE({
           {/* Aim of Experiment */}
           <div className="bg-black border border-zinc-800 rounded-xl p-3.5">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider flex items-center space-x-1.5 mb-1">
-              <BookOpen className="w-3.5 h-3.5 text-fuchsia-400" />
+              <BookOpen className="w-3.5 h-3.5 text-[#c9a0aa]" />
               <span>Aim of Experiment</span>
             </h4>
             <p className="text-xs text-zinc-300 leading-relaxed">
@@ -460,7 +460,7 @@ export default function PracticalIDE({
                   <div key={tc.id || idx} className="bg-zinc-900/60 p-2 rounded-lg border border-zinc-800 text-[11px] font-mono">
                     <div className="text-zinc-400 font-bold mb-0.5">Case {idx + 1}:</div>
                     {tc.input && <div><span className="text-zinc-500">Input:</span> {tc.input}</div>}
-                    <div><span className="text-zinc-500">Expected:</span> <span className="text-fuchsia-400 font-bold">{tc.expected_output}</span></div>
+                    <div><span className="text-zinc-500">Expected:</span> <span className="text-[#c9a0aa] font-bold">{tc.expected_output}</span></div>
                   </div>
                 ))}
               </div>
@@ -501,7 +501,7 @@ export default function PracticalIDE({
               <button
                 onClick={() => setActiveTab('output')}
                 className={`py-2 font-bold border-b-2 transition-all flex items-center space-x-1.5 ${
-                  activeTab === 'output' ? 'border-fuchsia-500 text-fuchsia-400' : 'border-transparent text-zinc-400 hover:text-white'
+                  activeTab === 'output' ? 'border-[#9d6878] text-[#c9a0aa]' : 'border-transparent text-zinc-400 hover:text-white'
                 }`}
               >
                 <TerminalIcon className="w-3.5 h-3.5" />
@@ -511,7 +511,7 @@ export default function PracticalIDE({
               <button
                 onClick={() => setActiveTab('stdin')}
                 className={`py-2 font-bold border-b-2 transition-all ${
-                  activeTab === 'stdin' ? 'border-fuchsia-500 text-fuchsia-400' : 'border-transparent text-zinc-400 hover:text-white'
+                  activeTab === 'stdin' ? 'border-[#9d6878] text-[#c9a0aa]' : 'border-transparent text-zinc-400 hover:text-white'
                 }`}
               >
                 Custom Input (stdin)
@@ -520,7 +520,7 @@ export default function PracticalIDE({
               <button
                 onClick={() => setActiveTab('tests')}
                 className={`py-2 font-bold border-b-2 transition-all ${
-                  activeTab === 'tests' ? 'border-fuchsia-500 text-fuchsia-400' : 'border-transparent text-zinc-400 hover:text-white'
+                  activeTab === 'tests' ? 'border-[#9d6878] text-[#c9a0aa]' : 'border-transparent text-zinc-400 hover:text-white'
                 }`}
               >
                 Test Results
@@ -544,7 +544,7 @@ export default function PracticalIDE({
                     value={customStdin}
                     onChange={(e) => setCustomStdin(e.target.value)}
                     placeholder="Input data..."
-                    className="flex-1 bg-black border border-zinc-800 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-fuchsia-500 font-mono resize-none"
+                    className="flex-1 bg-black border border-zinc-800 rounded-lg p-2 text-xs text-white focus:outline-none focus:border-[#9d6878] font-mono resize-none"
                   />
                 </div>
               )}

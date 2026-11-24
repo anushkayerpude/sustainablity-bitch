@@ -95,14 +95,14 @@ export default function Home() {
   if (!currentUser) {
     return (
       <div className="min-h-screen bg-black flex flex-col items-center justify-center text-zinc-400 space-y-3">
-        <Cpu className="w-10 h-10 text-fuchsia-500 animate-spin" />
+        <Cpu className="w-10 h-10 text-[#9d6878] animate-spin" />
         <p className="text-xs font-bold uppercase tracking-wider text-zinc-300">Loading LabSync...</p>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col selection:bg-fuchsia-500 selection:text-white">
+    <div className="min-h-screen bg-black text-white flex flex-col selection:bg-[#9d6878] selection:text-white">
       
       {/* Main Top Header with Role Switcher & Eco Impact */}
       <Navbar
@@ -180,7 +180,7 @@ export default function Home() {
       <footer className="border-t border-zinc-900 bg-black py-4 px-6 text-center text-xs text-zinc-500 print:hidden">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>LabSync • Continuous Assessment & Simultaneous Practical Verification</span>
-          <span className="text-fuchsia-400 font-semibold">Zero Paper • Verified Live</span>
+          <span className="text-[#c9a0aa] font-semibold">Zero Paper • Verified Live</span>
         </div>
       </footer>
 

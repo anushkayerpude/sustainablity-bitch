@@ -76,10 +76,10 @@ export default function StudentDashboard({
       <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-6 relative overflow-hidden">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <div className="flex items-center space-x-2 text-xs font-bold text-fuchsia-400 uppercase tracking-wider mb-1">
+            <div className="flex items-center space-x-2 text-xs font-bold text-[#c9a0aa] uppercase tracking-wider mb-1">
               <span>Engineering Lab Portal</span>
               <span>•</span>
-              <span className="font-mono bg-fuchsia-950 px-2 py-0.5 rounded border border-fuchsia-800">
+              <span className="font-mono bg-[#1a0d12] px-2 py-0.5 rounded border border-[#3d1f28]">
                 Roll No: {currentUser.personal_id}
               </span>
             </div>
@@ -97,12 +97,12 @@ export default function StudentDashboard({
               onClick={() => setSelectedSection('current')}
               className={`p-3 rounded-xl border text-center transition-all ${
                 selectedSection === 'current'
-                  ? 'bg-fuchsia-950/60 border-fuchsia-500 text-white'
+                  ? 'bg-[#1a0d12]/60 border-[#9d6878] text-white'
                   : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700 text-zinc-300'
               }`}
             >
               <div className="text-[11px] font-bold uppercase text-zinc-400">Current</div>
-              <div className="text-2xl font-black text-fuchsia-400 mt-0.5">{currentPracticals.length}</div>
+              <div className="text-2xl font-black text-[#c9a0aa] mt-0.5">{currentPracticals.length}</div>
               <div className="text-[10px] text-zinc-500">Live / Active</div>
             </button>
 
@@ -110,7 +110,7 @@ export default function StudentDashboard({
               onClick={() => setSelectedSection('pending')}
               className={`p-3 rounded-xl border text-center transition-all ${
                 selectedSection === 'pending'
-                  ? 'bg-fuchsia-950/60 border-fuchsia-500 text-white'
+                  ? 'bg-[#1a0d12]/60 border-[#9d6878] text-white'
                   : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700 text-zinc-300'
               }`}
             >
@@ -123,12 +123,12 @@ export default function StudentDashboard({
               onClick={() => setSelectedSection('completed')}
               className={`p-3 rounded-xl border text-center transition-all ${
                 selectedSection === 'completed'
-                  ? 'bg-fuchsia-950/60 border-fuchsia-500 text-white'
+                  ? 'bg-[#1a0d12]/60 border-[#9d6878] text-white'
                   : 'bg-zinc-900 border-zinc-800 hover:border-zinc-700 text-zinc-300'
               }`}
             >
               <div className="text-[11px] font-bold uppercase text-zinc-400">Done</div>
-              <div className="text-2xl font-black text-fuchsia-400 mt-0.5">{completedPracticals.length}</div>
+              <div className="text-2xl font-black text-[#c9a0aa] mt-0.5">{completedPracticals.length}</div>
               <div className="text-[10px] text-zinc-500">Checked</div>
             </button>
           </div>
@@ -136,14 +136,14 @@ export default function StudentDashboard({
 
         {/* Live Lab Alert Banner (If Lab is happening right now!) */}
         {activeSessions.length > 0 && (
-          <div className="mt-5 bg-fuchsia-950/80 border border-fuchsia-600 p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="mt-5 bg-[#1a0d12]/80 border border-[#8b5a68] p-4 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
             <div className="flex items-center space-x-3">
               <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-fuchsia-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#c9a0aa] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#9d6878]"></span>
               </span>
               <div>
-                <span className="font-extrabold text-fuchsia-400 uppercase tracking-wide">
+                <span className="font-extrabold text-[#c9a0aa] uppercase tracking-wide">
                   Live Lab Happening Now:
                 </span>
                 <span className="font-bold text-white ml-1.5">
@@ -154,13 +154,13 @@ export default function StudentDashboard({
             </div>
 
             <div className="flex items-center space-x-2">
-              <span className="font-mono bg-black text-fuchsia-300 px-2 py-1 rounded border border-fuchsia-800 font-bold">
+              <span className="font-mono bg-black text-[#d4b8be] px-2 py-1 rounded border border-[#3d1f28] font-bold">
                 Code: {activeSessions[0].session_code}
               </span>
               {activeSessions[0].active_practical_id && (
                 <button
                   onClick={() => onOpenPractical(activeSessions[0].active_practical_id)}
-                  className="bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-extrabold px-3 py-1 rounded-lg transition-all shadow-md flex items-center space-x-1"
+                  className="bg-[#8b5a68] hover:bg-[#9d6878] text-white font-extrabold px-3 py-1 rounded-lg transition-all shadow-md flex items-center space-x-1"
                 >
                   <Play className="w-3 h-3 fill-white" />
                   <span>Open Practical</span>
@@ -180,7 +180,7 @@ export default function StudentDashboard({
             onClick={() => setSelectedSection('current')}
             className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all ${
               selectedSection === 'current'
-                ? 'bg-fuchsia-600 text-white shadow-lg shadow-fuchsia-600/30'
+                ? 'bg-[#8b5a68] text-white shadow-lg shadow-[#8b5a68]/30'
                 : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800'
             }`}
           >
@@ -196,7 +196,7 @@ export default function StudentDashboard({
             onClick={() => setSelectedSection('pending')}
             className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all ${
               selectedSection === 'pending'
-                ? 'bg-fuchsia-600 text-white shadow-lg shadow-fuchsia-600/30'
+                ? 'bg-[#8b5a68] text-white shadow-lg shadow-[#8b5a68]/30'
                 : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800'
             }`}
           >
@@ -212,7 +212,7 @@ export default function StudentDashboard({
             onClick={() => setSelectedSection('completed')}
             className={`flex items-center space-x-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all ${
               selectedSection === 'completed'
-                ? 'bg-fuchsia-600 text-white shadow-lg shadow-fuchsia-600/30'
+                ? 'bg-[#8b5a68] text-white shadow-lg shadow-[#8b5a68]/30'
                 : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800'
             }`}
           >
@@ -232,7 +232,7 @@ export default function StudentDashboard({
             placeholder="Search practicals..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="bg-zinc-900 border border-zinc-800 text-xs text-white pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:border-fuchsia-500 w-full sm:w-60"
+            className="bg-zinc-900 border border-zinc-800 text-xs text-white pl-8 pr-3 py-1.5 rounded-lg focus:outline-none focus:border-[#9d6878] w-full sm:w-60"
           />
         </div>
       </div>
@@ -260,9 +260,9 @@ export default function StudentDashboard({
             return (
               <div
                 key={practical.id}
-                className={`bg-zinc-950 border rounded-2xl p-5 flex flex-col justify-between transition-all hover:border-fuchsia-500/70 shadow-lg ${
+                className={`bg-zinc-950 border rounded-2xl p-5 flex flex-col justify-between transition-all hover:border-[#9d6878]/70 shadow-lg ${
                   isLive
-                    ? 'border-fuchsia-500 ring-1 ring-fuchsia-500/40 bg-zinc-950'
+                    ? 'border-[#9d6878] ring-1 ring-[#9d6878]/40 bg-zinc-950'
                     : isVerified
                     ? 'border-zinc-800 hover:border-zinc-700'
                     : 'border-zinc-800'
@@ -271,19 +271,19 @@ export default function StudentDashboard({
                 <div>
                   {/* Top Badges */}
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-xs font-black uppercase tracking-wider text-fuchsia-400">
+                    <span className="text-xs font-black uppercase tracking-wider text-[#c9a0aa]">
                       EXP {practical.exp_number} • {practical.subject_code}
                     </span>
 
                     {isLive && (
-                      <span className="bg-fuchsia-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded-full animate-pulse">
+                      <span className="bg-[#8b5a68] text-white text-[10px] font-black uppercase px-2 py-0.5 rounded-full animate-pulse">
                         ● LIVE IN LAB
                       </span>
                     )}
 
                     {isVerified && (
-                      <span className="bg-zinc-900 border border-fuchsia-700 text-fuchsia-300 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center space-x-1">
-                        <ShieldCheck className="w-3 h-3 text-fuchsia-400" />
+                      <span className="bg-zinc-900 border border-[#4a2f38] text-[#d4b8be] text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center space-x-1">
+                        <ShieldCheck className="w-3 h-3 text-[#c9a0aa]" />
                         <span>Verified & Checked</span>
                       </span>
                     )}
@@ -320,7 +320,7 @@ export default function StudentDashboard({
                   {isVerified && (
                     <div className="mt-3.5 bg-black border border-zinc-800 rounded-xl p-3 text-xs space-y-1">
                       <div className="flex items-center justify-between text-white font-bold">
-                        <span>Marks: <strong className="text-fuchsia-400">{practical.marks_obtained !== null ? practical.marks_obtained : 10}/{practical.max_marks}</strong></span>
+                        <span>Marks: <strong className="text-[#c9a0aa]">{practical.marks_obtained !== null ? practical.marks_obtained : 10}/{practical.max_marks}</strong></span>
                         <span className="text-[10px] font-mono text-zinc-400">No Printing Required ✓</span>
                       </div>
                       {practical.teacher_remarks && (
@@ -328,7 +328,7 @@ export default function StudentDashboard({
                           "{practical.teacher_remarks}"
                         </p>
                       )}
-                      <div className="text-[10px] text-fuchsia-400 font-medium pt-0.5">
+                      <div className="text-[10px] text-[#c9a0aa] font-medium pt-0.5">
                         Signed: {practical.teacher_signature || 'Faculty In-Charge'}
                       </div>
                     </div>
@@ -345,10 +345,10 @@ export default function StudentDashboard({
                     onClick={() => onOpenPractical(practical.id)}
                     className={`flex items-center space-x-1.5 px-4 py-1.5 rounded-xl text-xs font-bold transition-all shadow-md ${
                       isLive
-                        ? 'bg-fuchsia-600 hover:bg-fuchsia-500 text-white shadow-fuchsia-600/30 ring-2 ring-fuchsia-400'
+                        ? 'bg-[#8b5a68] hover:bg-[#9d6878] text-white shadow-[#8b5a68]/30 ring-2 ring-[#c9a0aa]'
                         : isVerified
                         ? 'bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700'
-                        : 'bg-fuchsia-600 hover:bg-fuchsia-500 text-white'
+                        : 'bg-[#8b5a68] hover:bg-[#9d6878] text-white'
                     }`}
                   >
                     <span>{isLive ? 'Perform Now' : isVerified ? 'View Solution' : 'Start Practical'}</span>
@@ -365,8 +365,8 @@ export default function StudentDashboard({
       {/* Simple Zero-Paper Footer Guarantee */}
       <div className="bg-zinc-950 border border-zinc-800 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-fuchsia-400">
-            <Printer className="w-5 h-5 text-fuchsia-400" />
+          <div className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-[#c9a0aa]">
+            <Printer className="w-5 h-5 text-[#c9a0aa]" />
           </div>
           <div>
             <h4 className="text-xs font-bold text-white">Save money on printing journals</h4>
@@ -378,10 +378,10 @@ export default function StudentDashboard({
 
         <button
           onClick={onOpenJournal}
-          className="bg-zinc-900 hover:bg-zinc-800 border border-fuchsia-500/60 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 shrink-0 self-start sm:self-auto"
+          className="bg-zinc-900 hover:bg-zinc-800 border border-[#9d6878]/60 text-white text-xs font-bold px-3.5 py-1.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 shrink-0 self-start sm:self-auto"
         >
           <span>Open Digital Journal</span>
-          <ChevronRight className="w-3.5 h-3.5 text-fuchsia-400" />
+          <ChevronRight className="w-3.5 h-3.5 text-[#c9a0aa]" />
         </button>
       </div>
 

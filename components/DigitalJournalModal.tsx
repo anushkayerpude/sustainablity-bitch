@@ -46,7 +46,7 @@ export default function DigitalJournalModal({
         {/* Top Bar */}
         <div className="px-5 py-3 border-b border-zinc-800 bg-black flex items-center justify-between print:hidden">
           <div className="flex items-center space-x-2">
-            <FileCheck2 className="w-5 h-5 text-fuchsia-400" />
+            <FileCheck2 className="w-5 h-5 text-[#c9a0aa]" />
             <div>
               <h3 className="text-sm font-bold text-white tracking-tight">
                 Official Digital Lab Journal
@@ -60,7 +60,7 @@ export default function DigitalJournalModal({
           <div className="flex items-center space-x-2">
             <button
               onClick={() => window.print()}
-              className="flex items-center space-x-1.5 bg-fuchsia-600 hover:bg-fuchsia-500 text-white font-bold px-3.5 py-1.5 rounded-lg text-xs shadow-md transition-all"
+              className="flex items-center space-x-1.5 bg-[#8b5a68] hover:bg-[#9d6878] text-white font-bold px-3.5 py-1.5 rounded-lg text-xs shadow-md transition-all"
             >
               <Printer className="w-3.5 h-3.5" />
               <span>Print / Save as PDF</span>
@@ -90,7 +90,7 @@ export default function DigitalJournalModal({
               
               {/* Institution Header */}
               <div className="border border-zinc-800 print:border-black p-6 rounded-2xl text-center space-y-2 bg-zinc-950/60 print:bg-transparent">
-                <div className="text-xs uppercase tracking-widest text-fuchsia-400 print:text-black font-extrabold">
+                <div className="text-xs uppercase tracking-widest text-[#c9a0aa] print:text-black font-extrabold">
                   {journalData.institution?.college_name}
                 </div>
                 <h1 className="text-xl sm:text-2xl font-black text-white print:text-black uppercase">
@@ -108,7 +108,7 @@ export default function DigitalJournalModal({
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-400 print:text-zinc-600 uppercase block">Student Roll ID</span>
-                    <strong className="text-fuchsia-400 print:text-black font-mono">{journalData.student?.personal_id}</strong>
+                    <strong className="text-[#c9a0aa] print:text-black font-mono">{journalData.student?.personal_id}</strong>
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-400 print:text-zinc-600 uppercase block">Batch & Sem</span>
@@ -116,11 +116,11 @@ export default function DigitalJournalModal({
                   </div>
                   <div>
                     <span className="text-[10px] text-zinc-400 print:text-zinc-600 uppercase block">Avg Score</span>
-                    <strong className="text-fuchsia-400 print:text-black font-mono">{journalData.summary?.average_marks} / 10</strong>
+                    <strong className="text-[#c9a0aa] print:text-black font-mono">{journalData.summary?.average_marks} / 10</strong>
                   </div>
                 </div>
 
-                <div className="pt-2 text-[11px] text-fuchsia-400 print:text-zinc-700 font-bold flex items-center justify-center space-x-2">
+                <div className="pt-2 text-[11px] text-[#c9a0aa] print:text-zinc-700 font-bold flex items-center justify-center space-x-2">
                   <Leaf className="w-3.5 h-3.5" />
                   <span>{journalData.summary?.pages_saved} Pages of Paper Saved (₹{journalData.summary?.money_saved_inr} Saved)</span>
                 </div>
@@ -129,7 +129,7 @@ export default function DigitalJournalModal({
               {/* Index Table */}
               <div className="space-y-2">
                 <h3 className="text-xs font-bold text-white print:text-black uppercase tracking-wider flex items-center space-x-1.5">
-                  <Layers className="w-4 h-4 text-fuchsia-400" />
+                  <Layers className="w-4 h-4 text-[#c9a0aa]" />
                   <span>Continuous Assessment Index</span>
                 </h3>
 
@@ -147,11 +147,11 @@ export default function DigitalJournalModal({
                     <tbody className="divide-y divide-zinc-800 print:divide-zinc-300">
                       {journalData.practicals?.map((p: any) => (
                         <tr key={p.id}>
-                          <td className="p-2.5 font-mono font-bold text-fuchsia-400 print:text-black">{p.exp_number}</td>
+                          <td className="p-2.5 font-mono font-bold text-[#c9a0aa] print:text-black">{p.exp_number}</td>
                           <td className="p-2.5 font-medium text-white print:text-black">{p.practical_title}</td>
                           <td className="p-2.5 text-zinc-400 print:text-black">{p.subject_code}</td>
-                          <td className="p-2.5 font-mono font-bold text-fuchsia-400 print:text-black">{p.marks_obtained !== null ? p.marks_obtained : 10}</td>
-                          <td className="p-2.5 text-[11px] text-fuchsia-300 print:text-black font-semibold truncate max-w-xs">
+                          <td className="p-2.5 font-mono font-bold text-[#c9a0aa] print:text-black">{p.marks_obtained !== null ? p.marks_obtained : 10}</td>
+                          <td className="p-2.5 text-[11px] text-[#d4b8be] print:text-black font-semibold truncate max-w-xs">
                             {p.teacher_signature || 'Verified Live'}
                           </td>
                         </tr>
@@ -173,7 +173,7 @@ export default function DigitalJournalModal({
                       <span className="text-xs font-bold text-white print:text-black">
                         Exp {p.exp_number}: {p.practical_title}
                       </span>
-                      <span className="text-xs font-mono font-bold text-fuchsia-400 print:text-black">
+                      <span className="text-xs font-mono font-bold text-[#c9a0aa] print:text-black">
                         Marks: {p.marks_obtained}/10
                       </span>
                     </div>
@@ -193,7 +193,7 @@ export default function DigitalJournalModal({
                     {/* Teacher Stamp */}
                     <div className="bg-black print:bg-zinc-100 border border-zinc-800 print:border-zinc-300 p-2.5 rounded-lg flex items-center justify-between text-xs">
                       <div>
-                        <div className="flex items-center space-x-1 text-fuchsia-400 print:text-black font-bold text-[11px]">
+                        <div className="flex items-center space-x-1 text-[#c9a0aa] print:text-black font-bold text-[11px]">
                           <ShieldCheck className="w-3.5 h-3.5" />
                           <span>FACULTY SIGNATURE SEAL</span>
                         </div>
