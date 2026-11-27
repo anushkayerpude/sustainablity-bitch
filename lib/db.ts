@@ -2,7 +2,9 @@ import { DatabaseSync } from 'node:sqlite';
 import path from 'node:path';
 import fs from 'node:fs';
 
-const DB_PATH = path.join(process.cwd(), 'labsync.db');
+// In Docker, DB_PATH env var points to the persistent volume (/data/labsync.db).
+// Locally it falls back to the project root.
+const DB_PATH = process.env.DB_PATH ?? path.join(process.cwd(), 'labsync.db');
 
 let dbInstance: DatabaseSync | null = null;
 

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: labsync
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      - key: PORT
+        value: "3000"
+      - key: DB_PATH
+        value: /data/labsync.db
+    disk:
+      name: labsync-db
+      mountPath: /data
+      sizeGB: 1
